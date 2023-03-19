@@ -1,19 +1,22 @@
 package pro.sky.java.course2.calculator;
 
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Controller {
+@RequestMapping("/calculator")
+    public class Controller {
     private final CalculateServise calculateService;
 
     public Controller(CalculateServise calculateService){
         this.calculateService = calculateService;
     }
-    @GetMapping
+    @GetMapping(produces = MediaType.TEXT_HTML_VALUE)
     public String hello(){
-        return "Добро пожаловать в калькулятор";
+        return "<h1 style = \" color: red \">Добро пожаловать в калькулятор</h1>";
     }
     @GetMapping(path="/plus")
     public String plus(@RequestParam("num1") String num1, @RequestParam("num2") String num2){
