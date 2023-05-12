@@ -3,7 +3,7 @@ package pro.sky.java.course2.calculator.service;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculateServiseImpl implements CalculateServise {
+public class CalculateServiceImpl implements CalculateService {
     double result;
     int parsedNum1;
     int parsedNum2;
